@@ -1,70 +1,44 @@
-html {
-    box-sizing: border-box;
+body {
+    background-color: #e0ffe0; /* light green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
-  
-  *, *::before, *::after {
-    box-sizing: inherit;
-  }
-  
-  #piano {
-    background-color: #00471b;
-    width: 992px;
-    height: 290px;
-    margin: 80px auto;
-    padding: 90px 20px 0 20px;
+
+  .piano {
     position: relative;
+    display: flex;
+    border: 5px solid darkgreen;
+    background-color: green;
+    padding: 10px;
     border-radius: 10px;
   }
-  
-  .keys {
-    background-color: #040404;
-    width: 949px;
-    height: 180px;
-    padding-left: 2px;
-    overflow: hidden;
-  }
-  
-  .key {
-    background-color: #ffffff;
+
+  .white-key {
+    width: 40px;
+    height: 200px;
+    background: #ccffcc; /* light greenish white */
+    border: 1px solid darkgreen;
     position: relative;
-    width: 41px;
-    height: 175px;
-    margin: 2px;
-    float: left;
-    border-radius: 0 0 3px 3px;
+    z-index: 1;
+    margin: 0 1px;
+    border-radius: 5px 5px 0 0;
   }
-  
-  .key.black--key::after {
-    background-color: #1d1e22;
-    content: "";
+
+  .black-key {
+    width: 25px;
+    height: 120px;
+    background: darkgreen;
     position: absolute;
-    left: -18px;
-    width: 32px;
-    height: 100px;
-    border-radius: 0 0 3px 3px;
+    top: 0;
+    z-index: 2;
+    border-radius: 3px 3px 0 0;
   }
-  
-  .logo {
-    width: 200px;
-    position: absolute;
-    top: 23px;
-  }
-  
-  @media (max-width: 768px) {
-    #piano {
-      width: 358px;
-    }
-  
-    .keys {
-      width: 318px;
-    }
-  
-    .logo {
-      width: 150px;
-    }
-  }
-  
-  @media (max-width: 1199px) and (min-width: 769px) {
-  #piano{width:675px;}
-  .keys{width:633px;}
-  }
+
+  /* Position black keys */
+  .black-key:nth-child(2) { left: 30px; }
+  .black-key:nth-child(4) { left: 70px; }
+  .black-key:nth-child(7) { left: 150px; }
+  .black-key:nth-child(9) { left: 190px; }
+  .black-key:nth-child(11) { left: 230px; }
